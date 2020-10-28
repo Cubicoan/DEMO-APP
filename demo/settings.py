@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'b8^u@t2-+r4v7lyl-ekdlq4q))r#v(^k0ug9zfu^yc#+lur!!9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['demo-kanaban.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['demo-cubicoan.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
