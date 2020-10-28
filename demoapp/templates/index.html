@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Demo App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+        .whole-page{
+            margin: 0px !important;
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+        }
+
+        .main-card{
+            margin-top: 5vh;
+            margin-left: 10vw;
+            height: 90vh;
+            width: 81vw;
+            border-radius: 5px;
+        }
+
+        .sidebar{
+            margin: 0px !important;
+            background-color: #065099;
+            height: 90vh;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        .kanban-board{
+            margin: 0px !important;
+            background-color: #C5E1FC;
+            height: 90vh;
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        .kanban-stage{
+            margin: 0px !important;
+            background-color: white;
+            height: 76vh;
+            border-radius: 5px;
+            margin-left: 2.1vw !important;
+            margin-top: 2.5vh !important;
+        }
+
+        .kanban-head{
+            margin: 0px !important;
+            background-color: #021527;
+            height: 5vh;
+            border-radius: 5px;
+            margin-left: 2.1vw !important;
+            margin-top: 2.5vh !important;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="row whole-page">
+    <div class="main-card">
+        <div class="row">
+            <div class="col-1 sidebar"></div>
+            <div class="col-11 kanban-board">
+                <div class="row">
+                    <div class="col-2 kanban-head"></div>
+                    <div class="col-2 kanban-head"></div>
+                    <div class="col-2 kanban-head"></div>
+                    <div class="col-2 kanban-head"></div>
+                    <div class="col-2 kanban-head"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2 kanban-stage"></div>
+                    <div class="col-2 kanban-stage"></div>
+                    <div class="col-2 kanban-stage"></div>
+                    <div class="col-2 kanban-stage"></div>
+                    <div class="col-2 kanban-stage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
