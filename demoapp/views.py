@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from demoapp.forms import TaskForm
 
 
 # Create your views here.
@@ -11,7 +12,19 @@ def IndexPage(request):
     stage4 = Task.objects.filter(stage='stage4')
     stage5 = Task.objects.filter(stage='stage5')
 
-    context = {'stage1': stage1, 'stage2': stage2, 'stage3': stage3, 'stage4': stage4, 'stage5': stage5}
+    form = TaskForm(request.POST or None)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            sub_number = form.cleaned_data.get('task_no')
+            print(sub_number)
+            form = form.save(commit=False)
+            form.sub_task_no = sub_number
+            form.save()
+
+    form = TaskForm(None)
+
+    context = {'stage1': stage1, 'stage2': stage2, 'stage3': stage3, 'stage4': stage4, 'stage5': stage5, 'form': form}
     return render(request, 'index.html', context)
 
 

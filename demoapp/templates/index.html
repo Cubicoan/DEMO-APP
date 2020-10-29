@@ -118,6 +118,21 @@
             text-align: center;
         }
 
+        .upper-row-start{
+            margin-top: 1vh;
+            height: 2vh;
+            font-size: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .middle-row-start{
+            height: 3vh;
+            font-size: 10px;
+            color: white;
+            text-align: center;
+        }
+
         .lower-row{
             height: 2vh;
             font-size: 10px;
@@ -215,7 +230,7 @@
                             <div class="row card job-card">
                                     <div class="move-back-arrow"></div>
                                     <div class="middle-part">
-                                        <div class="upper-row">
+                                        <div class="upper-row-start">
                                             {{item.sub_task_no}}
                                             {% if item.category == 'Category A' %}
                                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-square-fill" fill="green" xmlns="http://www.w3.org/2000/svg">
@@ -233,13 +248,8 @@
                                                 </svg>
                                             {% endif %}
                                         </div>
-                                        <div class="middle-row">
+                                        <div class="middle-row-start">
                                             Value: {{item.task_value}}
-
-                                        </div>
-                                        <div class="lower-row">
-                                            <button class="btn split-button">SPLIT</button>
-                                            Split: 1/4
                                         </div>
                                     </div>
                                     <div class="move-forward-arrow">
@@ -454,7 +464,6 @@
 
                                         </div>
                                         <div class="lower-row">
-                                            <button class="btn split-button">SPLIT</button>
                                             Split: 1/4
                                         </div>
                                     </div>
@@ -479,7 +488,11 @@
 <div class="modal fade embed-video" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <h1>Django Form</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="Submit" class="btn btn-primary btn-sm">
+        </form>
     </div>
   </div>
 </div>
