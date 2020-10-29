@@ -19,5 +19,18 @@ from demoapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.IndexPage, name="index")
+    path('', views.IndexPage, name="index"),
+
+    path('one_to_two/<str:pk>', views.moveOneToTwo, name="one_to_two"),
+
+    path('two_to_one/<str:pk>', views.moveTwoToOne, name="two_to_one"),
+    path('two_to_three/<str:pk>', views.moveTwoToThree, name="two_to_three"),
+
+    path('three_to_two/<str:pk>', views.moveThreeToTwo, name="three_to_two"),
+    path('three_to_four/<str:pk>', views.moveThreeToFour, name="three_to_four"),
+
+    path('four_to_three/<str:pk>', views.moveFourToThree, name="four_to_three"),
+    path('four_to_five/<str:pk>', views.moveFourToFive, name="four_to_five"),
+
+    path('five_to_four/<str:pk>', views.moveFiveToFour, name="five_to_four"),
 ]

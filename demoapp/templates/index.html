@@ -24,7 +24,6 @@
             height: 90vh;
             width: 81vw;
             border-radius: 5px;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar{
@@ -48,7 +47,6 @@
             border-radius: 5px;
             margin-left: 2.1vw !important;
             margin-top: 2.5vh !important;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
             overflow: scroll;
         }
 
@@ -68,7 +66,6 @@
             border-radius: 5px;
             margin-left: 2.1vw !important;
             margin-top: 2.5vh !important;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
@@ -82,7 +79,6 @@
             margin-right: 5px;
             margin-left: 5px;
             background-color: #212f45;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         }
 
         .move-back-arrow{
@@ -105,7 +101,7 @@
         }
 
         .arrow-icon{
-            margin-top: 60%;
+            margin-top: 50%;
         }
 
         .upper-row{
@@ -159,6 +155,15 @@
         }
 
         .side-bar-btn{
+            padding: 0px !important;
+            background-color: #003049 !important;
+            border: none !important;
+            cursor: pointer !important;
+            outline:none !important;
+            box-shadow: none !important;
+        }
+
+        .card-button{
             padding: 0px !important;
             background-color: #003049 !important;
             border: none !important;
@@ -238,9 +243,14 @@
                                         </div>
                                     </div>
                                     <div class="move-forward-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'one_to_two' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                             </div>
                         {% endfor %}
@@ -249,9 +259,14 @@
                         {% for item in stage2 %}
                             <div class="row card job-card">
                                     <div class="move-back-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'two_to_one' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                                     <div class="middle-part">
                                         <div class="upper-row">
@@ -282,9 +297,14 @@
                                         </div>
                                     </div>
                                     <div class="move-forward-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'two_to_three' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                             </div>
                         {% endfor %}
@@ -293,9 +313,14 @@
                         {% for item in stage3 %}
                             <div class="row card job-card">
                                     <div class="move-back-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'three_to_two' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                                     <div class="middle-part">
                                         <div class="upper-row">
@@ -326,9 +351,14 @@
                                         </div>
                                     </div>
                                     <div class="move-forward-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'three_to_four' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                             </div>
                         {% endfor %}
@@ -337,9 +367,14 @@
                         {% for item in stage4 %}
                             <div class="row card job-card">
                                     <div class="move-back-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'four_to_three' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                                     <div class="middle-part">
                                         <div class="upper-row">
@@ -370,9 +405,14 @@
                                         </div>
                                     </div>
                                     <div class="move-forward-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'four_to_five' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                             </div>
                         {% endfor %}
@@ -381,9 +421,14 @@
                         {% for item in stage5 %}
                             <div class="row card job-card">
                                     <div class="move-back-arrow">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill arrow-icon" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                                        </svg>
+                                        <form class="arrow-icon" action="{% url 'five_to_four' item.sub_task_no %}" method="POST">
+                                            {% csrf_token %}
+                                            <button class="card-button" type="submit" class="btn-group">
+                                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                               </svg>
+                                            </button>
+                                        </form>
                                     </div>
                                     <div class="middle-part">
                                         <div class="upper-row">
